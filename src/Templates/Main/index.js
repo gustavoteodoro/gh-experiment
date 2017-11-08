@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
   Route,
-  Link,
   withRouter,
 } from 'react-router-dom';
 import Profile from '../../Pages/Profile';
+
+import {
+    MainTemplate,
+    TemplateHeader,
+} from './styles.js';
 
 class Main extends Component {
   constructor(props) {
@@ -13,6 +16,7 @@ class Main extends Component {
 
     this.state = {
       value: '',
+      profileOpened: this.props.location.pathname !== '/',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,27 +28,27 @@ class Main extends Component {
   }
 
   handleSubmit(event) {
-    console.log(this.props);
     this.props.history.push('/user/' + this.state.value);
+    this.setState({profileOpened: true});
     event.preventDefault();
   }
 
   render() {
 
     return (
-        <div>
-            <header>
-            <form onSubmit={this.handleSubmit}>
-                <input
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
-                /> 
-                <input type="submit" value="Pesquisar" />
-            </form>
-            </header>
+        <MainTemplate>
+            <TemplateHeader profile={this.state.profileOpened}>
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        type="text"
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                    /> 
+                    <input type="submit" value="Pesquisar" />
+                </form>
+            </TemplateHeader>
             <Route path="/user/:username" component={Profile}/>
-        </div>
+        </MainTemplate>
     );
   }
 }
