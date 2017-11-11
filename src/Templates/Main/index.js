@@ -8,6 +8,7 @@ import Profile from '../../Pages/Profile';
 import {
     MainTemplate,
     TemplateHeader,
+    TemplateHeaderContainer,
 } from './styles.js';
 
 class Main extends Component {
@@ -38,14 +39,18 @@ class Main extends Component {
     return (
         <MainTemplate>
             <TemplateHeader profile={this.state.profileOpened}>
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                    /> 
-                    <input type="submit" value="Pesquisar" />
-                </form>
+                <TemplateHeaderContainer>
+                  <h1>GitHub Experiment</h1>
+                  <form onSubmit={this.handleSubmit}>
+                      <input
+                          type="text"
+                          value={this.state.value}
+                          onChange={this.handleChange}
+                          placeholder='Digite um nome de usuário...'
+                      /> 
+                      <input type="submit" value="Pesquisar" />
+                  </form>
+                </TemplateHeaderContainer>
             </TemplateHeader>
             <Route path="/user/:username" component={Profile}/>
         </MainTemplate>
