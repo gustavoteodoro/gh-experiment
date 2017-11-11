@@ -15,6 +15,19 @@ export const MainTemplate = styled.div`
     display: block;
 `;
 
+
+
+export const TemplateHeaderContainer = styled.div`
+    display: block;
+    position: ${props => props.profile ? 'relative' : 'absolute'};
+    width: ${props => props.profile ? '960px' : '420px'};
+    top: ${props => props.profile ? '15px' : '50%'};
+    left: ${props => props.profile ? '0' : '50%'};
+    transform: ${props => props.profile ? 'none' : 'translate(-50%,-50%);'};
+    transition: width .3s ease;
+    overflow: hidden;
+`
+
 export const TemplateHeader = styled.div`
     display: block;
     position: fixed;
@@ -39,12 +52,13 @@ export const TemplateHeader = styled.div`
         margin: 10px 0;
         text-align: center;
         color: ${white};
-        width: ${props => props.profile ? '200px' : '100%'};
-        transition: width .3s ease;
+        width: 100%;
+        transition: opacity .3s ease;
         background: transparent;
         border: 0;
         border-bottom: 1px solid ${white};
         outline: 0;
+        opacity: ${props => props.profile ? '0' : '1'};
 
         &[type='submit']{
             border: 0;
@@ -53,11 +67,3 @@ export const TemplateHeader = styled.div`
         }
     }
 `;
-
-export const TemplateHeaderContainer = styled.div`
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-`

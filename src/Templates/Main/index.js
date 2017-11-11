@@ -39,7 +39,7 @@ class Main extends Component {
     return (
         <MainTemplate>
             <TemplateHeader profile={this.state.profileOpened}>
-                <TemplateHeaderContainer>
+                <TemplateHeaderContainer profile={this.state.profileOpened}>
                   <h1>GitHub Experiment</h1>
                   <form onSubmit={this.handleSubmit}>
                       <input
