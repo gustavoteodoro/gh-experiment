@@ -9,7 +9,7 @@ import {
 import {
     oswaldRegular,
     ptSansRegular,
-} from '../../styles/settings/types';
+} from '../../styles/tools/types';
 
 export const MainTemplate = styled.div`
     display: block;
