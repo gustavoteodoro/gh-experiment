@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 
+import {
+    ProfileContainer,
+    UserName,
+    ProfilePic,
+    ProfileDetails,
+} from './styles';
+
 class Profile extends Component {
     constructor(props) {
         super(props);
@@ -24,13 +31,40 @@ class Profile extends Component {
     }
 
     render() {
-
+        const {
+            profile
+        } = this.state;
         return (
-            <div className="profile">
-                <h1>{this.state.profile.login}</h1>
-                <img src={this.state.profile.avatar_url} alt={this.state.profile.login} />
-                <p>{this.state.profile.location}</p>
-            </div>
+            <ProfileContainer>
+                <UserName>{profile.name}</UserName>
+                <ProfilePic src={profile.avatar_url} alt={profile.login} width="220px" height="220px" />
+                <ProfileDetails>
+                    {
+                        profile.location &&
+                            <p><b>{profile.location}</b></p>
+                    }
+                    {
+                        profile.company &&
+                            <p>{profile.company}</p>
+                    }
+                    {
+                        profile.email &&
+                            <p>{profile.email}</p>
+                    }
+                    {
+                        profile.bio &&
+                            <p>{profile.bio}</p>
+                    }
+                    {
+                        (profile.followers > 0) &&
+                            <p><b>{profile.followers}</b> followers</p>
+                    }
+                    {
+                        (profile.following > 0) &&
+                            <p><b>{profile.following}</b> following</p>
+                    }
+                </ProfileDetails>
+            </ProfileContainer>
         );
     }
 }

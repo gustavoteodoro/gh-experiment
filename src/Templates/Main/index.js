@@ -9,7 +9,7 @@ import {
     MainTemplate,
     TemplateHeader,
     TemplateHeaderContainer,
-} from './styles.js';
+} from './styles';
 
 class Main extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class Main extends Component {
     return (
         <MainTemplate>
             <TemplateHeader profile={this.state.profileOpened}>
-                <TemplateHeaderContainer profile={this.state.profileOpened}>
+                <TemplateHeaderContainer>
                   <h1>GitHub Experiment</h1>
                   <form onSubmit={this.handleSubmit}>
                       <input

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
     grey,
@@ -13,19 +13,19 @@ import {
 
 export const MainTemplate = styled.div`
     display: block;
+    overflow: auto;
 `;
-
-
 
 export const TemplateHeaderContainer = styled.div`
     display: block;
-    position: ${props => props.profile ? 'relative' : 'absolute'};
-    width: ${props => props.profile ? '960px' : '420px'};
-    top: ${props => props.profile ? '15px' : '50%'};
-    left: ${props => props.profile ? '0' : '50%'};
-    transform: ${props => props.profile ? 'none' : 'translate(-50%,-50%);'};
+    position: absolute;
+    max-width: 420px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     transition: width .3s ease;
     overflow: hidden;
+    margin: 0 auto;
 `
 
 export const TemplateHeader = styled.div`
@@ -33,7 +33,7 @@ export const TemplateHeader = styled.div`
     position: fixed;
     z-index: 10;
     width: 100vw;
-    height:  ${props => props.profile ? '100px' : '100%'};
+    height: 100%;
     background: ${grey};
     transition: height .3s ease;
 
@@ -53,12 +53,13 @@ export const TemplateHeader = styled.div`
         text-align: center;
         color: ${white};
         width: 100%;
-        transition: opacity .3s ease;
+        transition: opacity .3s ease, visibility 0s .3s ease;
         background: transparent;
         border: 0;
         border-bottom: 1px solid ${white};
         outline: 0;
-        opacity: ${props => props.profile ? '0' : '1'};
+        opacity: 1;
+        visiblity: visible;
 
         &[type='submit']{
             border: 0;
@@ -66,4 +67,26 @@ export const TemplateHeader = styled.div`
             color: ${white};
         }
     }
+
+    ${props => props.profile && css`
+        height: 60px;
+
+        h1{
+            ${oswaldRegular('30px')}
+        }
+
+        input{
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+
+        ${TemplateHeaderContainer}{
+            position: relative;
+            max-width: 960px;
+            top: 15px;
+            left: 0;
+            transform: none;
+        }
+    `}
 `;
