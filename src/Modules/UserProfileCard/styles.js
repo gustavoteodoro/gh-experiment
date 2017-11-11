@@ -54,7 +54,7 @@ export const ProfileDetails = styled.div`
     }
 `
 
-export const ProfileContainer = styled.div`
+export const ProfileCardContainer = styled.div`
     display: block;
     position: relative;
     width: 100%;
