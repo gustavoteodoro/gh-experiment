@@ -28,7 +28,7 @@ class Profile extends Component {
         return (
             <div className="profile">
                 <h1>{this.state.profile.login}</h1>
-                <img src={this.state.profile.avatar_url} />
+                <img src={this.state.profile.avatar_url} alt={this.state.profile.login} />
                 <p>{this.state.profile.location}</p>
             </div>
         );
