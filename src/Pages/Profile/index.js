@@ -9,6 +9,7 @@ import ProfileRepos from '../../Modules/ProfileRepos';
 import {
     UserReposHeader,
     UserReposMenu,
+    UserNotFound,
 } from './styles'
 
 class Profile extends Component {
@@ -36,7 +37,6 @@ class Profile extends Component {
     render() {
         const {
             profile,
-            repos
         } = this.state;
 
         const {
@@ -45,16 +45,26 @@ class Profile extends Component {
 
         return (
             <div>
-                <UserProfileCard profile={profile} />
-                <UserReposHeader>
-                    <h3>Repositories</h3>
-                    <UserReposMenu>
-                        <li><Link to={'/user/' + params.username + '/repos/' + 'stars'}>Stars</Link></li>
-                        <li><Link to={'/user/' + params.username + '/repos/' + 'forks'}>Forks</Link></li>
-                        <li><Link to={'/user/' + params.username + '/repos/' + 'updated'}>Updated</Link></li>
-                    </UserReposMenu>
-                </UserReposHeader>
-                <Route path="/user/:username/repos/:order" component={ProfileRepos}/>
+                {
+                    profile.login ?
+                        <div>
+                            <UserProfileCard profile={profile} />
+                            <UserReposHeader>
+                                <h3>Repositories</h3>
+                                <UserReposMenu>
+                                    <li><Link to={'/user/' + params.username + '/repos/' + 'stars'}>Stars</Link></li>
+                                    <li><Link to={'/user/' + params.username + '/repos/' + 'forks'}>Forks</Link></li>
+                                    <li><Link to={'/user/' + params.username + '/repos/' + 'updated'}>Updated</Link></li>
+                                </UserReposMenu>
+                            </UserReposHeader>
+                            <Route path="/user/:username/repos/:order" component={ProfileRepos}/>
+                        </div>
+                        :
+                        <UserNotFound>
+                            User not found :(
+                            <a href="/">Try again</a>
+                        </UserNotFound>
+                }
             </div>
         );
     }

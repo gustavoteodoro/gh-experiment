@@ -5,12 +5,17 @@ import { media } from '../../styles/tools/media';
 import {
     blue,
     grey,
+    red,
 } from '../../styles/settings/colors';
 
 import {
     ptSansRegular,
     ptSansBold,
 } from '../../styles/tools/types';
+
+import {
+    fadeInDelay,
+} from '../../styles/tools/animations';
 
 export const UserReposMenu = styled.ul`
     display: block;
@@ -39,6 +44,23 @@ export const UserReposMenu = styled.ul`
         &.active{
             color: ${blue};
         }
+    }
+`
+
+export const UserNotFound = styled.div`
+    display: block;
+    margin-top: 60px;
+    ${ptSansBold('40px')};
+    color: ${red};
+    padding: 20px;
+    text-align: center;
+    ${fadeInDelay}
+    
+    a{
+        margin-top: 20px;
+        ${ptSansBold('20px')};
+        display: block;
+        color: ${blue};
     }
 `
 
