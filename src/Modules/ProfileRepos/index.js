@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-
+import moment from 'moment';
+import {
+    Link,
+} from 'react-router-dom';
 import {
     ProfileReposContainer,
+    OrderTitle,
+    RepoContainer,
+    RepoList,
 } from './styles';
 
 let currentOrder = 'stars';
@@ -46,14 +52,23 @@ class ProfileRepos extends Component {
 
         return (
             <ProfileReposContainer>
-                <h3>Repositórios</h3>
-                {
-                    repos &&
-                        repos[0] &&
-                            repos.map(repo => (
-                                <p key={repo.name}>{repo.name}</p>
-                            ))
-                }
+                <OrderTitle>Organized by: {this.props.match.params.order}</OrderTitle>
+                <RepoList>
+                    {
+                        repos &&
+                            repos[0] &&
+                                repos.map(repo => (
+                                    <Link to='/' key={repo.name}>
+                                        <RepoContainer>
+                                            <h5>{repo.name}</h5>
+                                            <p><b>{repo.stargazers_count}</b> stars</p>
+                                            <p><b>{repo.forks}</b> forks</p>
+                                            <p>{moment(repo.updated_at).fromNow()}</p>
+                                        </RepoContainer>
+                                    </Link>
+                                ))
+                    }
+                </RepoList>
             </ProfileReposContainer>
         );
     }

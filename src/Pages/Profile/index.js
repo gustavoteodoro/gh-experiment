@@ -6,6 +6,10 @@ import {
 } from 'react-router-dom';
 import UserProfileCard from '../../Modules/UserProfileCard';
 import ProfileRepos from '../../Modules/ProfileRepos';
+import {
+    UserReposHeader,
+    UserReposMenu,
+} from './styles'
 
 class Profile extends Component {
     constructor(props) {
@@ -42,11 +46,14 @@ class Profile extends Component {
         return (
             <div>
                 <UserProfileCard profile={profile} />
-                <ul>
-                    <li><Link to={'/user/' + params.username + '/repos/' + 'stars'}>Stars</Link></li>
-                    <li><Link to={'/user/' + params.username + '/repos/' + 'forks'}>Forks</Link></li>
-                    <li><Link to={'/user/' + params.username + '/repos/' + 'updated'}>Updated</Link></li>
-                </ul>
+                <UserReposHeader>
+                    <h3>Repositories</h3>
+                    <UserReposMenu>
+                        <li><Link to={'/user/' + params.username + '/repos/' + 'stars'}>Stars</Link></li>
+                        <li><Link to={'/user/' + params.username + '/repos/' + 'forks'}>Forks</Link></li>
+                        <li><Link to={'/user/' + params.username + '/repos/' + 'updated'}>Updated</Link></li>
+                    </UserReposMenu>
+                </UserReposHeader>
                 <Route path="/user/:username/repos/:order" component={ProfileRepos}/>
             </div>
         );
