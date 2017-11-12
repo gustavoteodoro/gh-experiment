@@ -3,8 +3,8 @@ An experiment of Github API with React
 
 ## Install
 
-`npm install`
+`yarn install`
 
 ## Run
 
-`npm start`
+`yarn start`
