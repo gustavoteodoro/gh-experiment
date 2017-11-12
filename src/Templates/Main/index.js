@@ -29,7 +29,7 @@ class Main extends Component {
   }
 
   handleSubmit(event) {
-    this.props.history.push('/user/' + this.state.value);
+    this.props.history.push('/user/' + this.state.value + '/repos/stars');
     this.setState({profileOpened: true});
     event.preventDefault();
   }

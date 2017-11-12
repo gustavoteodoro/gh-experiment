@@ -27,7 +27,7 @@ export const fadeInZoomIn = `
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    animation-delay: .6s;
+    animation-delay: 1.6s;
 
     @keyframes fadeInZoomIn {
         0%   {
