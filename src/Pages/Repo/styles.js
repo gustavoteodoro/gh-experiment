@@ -5,13 +5,11 @@ import { media } from '../../styles/tools/media';
 import {
     white,
     blue,
-    grey,
 } from '../../styles/settings/colors';
 
 import {
     oswaldRegular,
     ptSansRegular,
-    ptSansBold,
 } from '../../styles/tools/types';
 
 import {

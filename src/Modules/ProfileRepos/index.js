@@ -46,7 +46,7 @@ class ProfileRepos extends Component {
             repos,
         } = this.state;
 
-        if(currentOrder != this.props.match.params.order){
+        if(currentOrder !== this.props.match.params.order){
             this.fetchRepo();
         }
 

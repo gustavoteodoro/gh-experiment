@@ -10,7 +10,6 @@ import {
 } from '../../styles/settings/colors';
 
 import {
-    oswaldRegular,
     ptSansRegular,
     ptSansBold,
 } from '../../styles/tools/types';

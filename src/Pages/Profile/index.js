@@ -52,9 +52,9 @@ class Profile extends Component {
                             <UserReposHeader>
                                 <h3>Repositories</h3>
                                 <UserReposMenu>
-                                    <li><Link to={'/user/' + params.username + '/repos/' + 'stars'}>Stars</Link></li>
-                                    <li><Link to={'/user/' + params.username + '/repos/' + 'forks'}>Forks</Link></li>
-                                    <li><Link to={'/user/' + params.username + '/repos/' + 'updated'}>Updated</Link></li>
+                                    <li><Link to={'/user/' + params.username + '/repos/stars'}>Stars</Link></li>
+                                    <li><Link to={'/user/' + params.username + '/repos/forks'}>Forks</Link></li>
+                                    <li><Link to={'/user/' + params.username + '/repos/updated'}>Updated</Link></li>
                                 </UserReposMenu>
                             </UserReposHeader>
                             <Route path="/user/:username/repos/:order" component={ProfileRepos}/>

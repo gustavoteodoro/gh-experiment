@@ -42,7 +42,7 @@ class Repo extends Component {
                     repo.owner &&            
                         <p>
                             <span>by </span>
-                            <Link to={'/user/' + repo.owner.login + '/repos/' + 'stars'}>{repo.owner.login}</Link>
+                            <Link to={'/user/' + repo.owner.login + '/repos/stars'}>{repo.owner.login}</Link>
                         </p>
                 }
                 <ul>
