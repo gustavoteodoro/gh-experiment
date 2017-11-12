@@ -20,8 +20,8 @@ class Profile extends Component {
         } = this.props;
         return (
             <ProfileCardContainer>
-                <UserName>{profile.name}</UserName>
                 <ProfilePic src={profile.avatar_url} alt={profile.login} width="220px" height="220px" />
+                <UserName>{profile.name}</UserName>
                 <ProfileDetails>
                     {
                         profile.location &&

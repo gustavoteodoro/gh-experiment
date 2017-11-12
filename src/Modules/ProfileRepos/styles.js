@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { media } from '../../styles/tools/media';
+
 import {
     blue,
     white,
@@ -23,6 +25,11 @@ export const OrderTitle = styled.h4`
     ${ptSansBold('20px')}
 
     color: ${grey};
+
+
+    ${media.mobile`
+        margin: 0 20px;
+    `}
 `
 
 export const RepoList = styled.div`
@@ -32,6 +39,10 @@ export const RepoList = styled.div`
         text-decoration: none;
         color: ${grey};
     }
+
+    ${media.mobile`
+        margin: 10px 0;
+    `}
 `
 
 export const RepoContainer = styled.div`
@@ -69,6 +80,12 @@ export const RepoContainer = styled.div`
             color: ${white};
         }
     }
+
+
+    ${media.mobile`
+        width: calc(100% - 40px);
+        margin: 10px 20px;
+    `}
 `
 
 export const ProfileReposContainer = styled.div`

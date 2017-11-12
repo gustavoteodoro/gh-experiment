@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { media } from '../../styles/tools/media';
+
 import {
     blue,
     white,
@@ -25,7 +27,18 @@ export const UserName = styled.h2`
     bottom: -5px;
     right: 30px;
 
-    ${fromBottom('-100px', '-5px')}
+    ${media.desktop`
+        ${fromBottom('-100px', '-5px')}
+    `}
+
+    ${media.mobile`
+        ${oswaldRegular('40px')}
+        position: relative;
+        margin-top: 20px;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+    `}
 `
 
 export const ProfilePic = styled.img`
@@ -37,6 +50,16 @@ export const ProfilePic = styled.img`
     border: 10px solid ${white};
     
     ${fadeInZoomIn}
+
+    ${media.mobile`
+        position: relative;
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin: 20px auto;
+        top: 0;
+        left: 0;
+    `}
 `
 
 export const ProfileDetails = styled.div`
@@ -52,6 +75,14 @@ export const ProfileDetails = styled.div`
     b{
         ${ptSansBold('21px')}  
     }
+
+    ${media.mobile`
+        position: relative;
+        top: 0;
+        right: 0;
+        text-align: center;
+        margin-bottom: 20px;
+    `}
 `
 
 export const ProfileCardContainer = styled.div`
@@ -66,4 +97,9 @@ export const ProfileCardContainer = styled.div`
     border-radius: 20px;
     overflow: hidden;
     ${fadeIn}
+
+    ${media.mobile`
+        margin-top: 60px;
+        border-radius: 0;
+    `}
 `

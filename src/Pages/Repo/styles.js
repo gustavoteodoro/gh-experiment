@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { media } from '../../styles/tools/media';
+
 import {
     white,
     blue,
@@ -55,4 +57,14 @@ export const RepoContainer = styled.div`
     a{
         color: ${white};
     }
+
+    ${media.mobile`
+        margin-top: 60px;
+        border-radius: 0;
+        min-height: calc(100vh - 60px);
+        h2{
+            ${oswaldRegular('40px')}
+            margin-bottom: 10px;
+        }
+    `}
 `

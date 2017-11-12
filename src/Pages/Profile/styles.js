@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { media } from '../../styles/tools/media';
+
 import {
     blue,
     grey,
@@ -48,4 +50,7 @@ export const UserReposHeader = styled.div`
     h3{
         ${ptSansBold('30px')}
     }
+    ${media.mobile`
+        padding: 0 20px;
+    `}
 `
