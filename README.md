@@ -1,5 +1,5 @@
 # gh-experiment
-An experiment of Github API
+An experiment of Github API with React
 
 ## Install
 
