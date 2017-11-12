@@ -4,6 +4,7 @@ import {
   withRouter,
 } from 'react-router-dom';
 import Profile from '../../Pages/Profile';
+import Repo from '../../Pages/Repo';
 
 import {
     MainTemplate,
@@ -40,19 +41,22 @@ class Main extends Component {
         <MainTemplate>
             <TemplateHeader profile={this.state.profileOpened}>
                 <TemplateHeaderContainer>
-                  <h1>GitHub Experiment</h1>
+                  <a href="/">
+                    <h1>GitHub Experiment</h1>
+                  </a>
                   <form onSubmit={this.handleSubmit}>
                       <input
                           type="text"
                           value={this.state.value}
                           onChange={this.handleChange}
-                          placeholder='Digite um nome de usuário...'
+                          placeholder='Enter a username here...'
                       /> 
-                      <input type="submit" value="Pesquisar" />
+                      <input type="submit" value="View profile" />
                   </form>
                 </TemplateHeaderContainer>
             </TemplateHeader>
             <Route path="/user/:username" component={Profile}/>
+            <Route path="/repo/:username/:reponame" component={Repo}/>
         </MainTemplate>
     );
   }

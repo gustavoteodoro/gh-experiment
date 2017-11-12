@@ -37,6 +37,11 @@ export const TemplateHeader = styled.div`
     background: ${grey};
     transition: height .3s ease;
 
+    a{
+        color: ${white};
+        text-decoration: none;
+    }
+
     h1{
         ${oswaldRegular('60px')}
 

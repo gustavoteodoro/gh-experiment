@@ -58,7 +58,7 @@ class ProfileRepos extends Component {
                         repos &&
                             repos[0] &&
                                 repos.map(repo => (
-                                    <Link to='/' key={repo.name}>
+                                    <Link to={'/repo/' + repo.full_name} key={repo.name}>
                                         <RepoContainer>
                                             <h5>{repo.name}</h5>
                                             <p><b>{repo.stargazers_count}</b> stars</p>
